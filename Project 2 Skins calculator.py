@@ -3,6 +3,11 @@
 # Definitions for Skin Calulation
 
 import requests
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # constants for conversion and tax
 PLEX_TO_ISK = 5350000
@@ -10,7 +15,7 @@ SALES_TAX = 5000000
 MULTIPLIER = 2
 BONUS_RATE = 1.20
 API_URL = "https://janice.e-351.com/api/rest/v2/markets"
-API_KEY = "iCwfwg6pdQzQwxTQtuPZX2iKBJFuErr5"
+API_KEY = os.getenv("API_KEY")  # get the API key from .env
 
 
 # Function to calculate plex amount
